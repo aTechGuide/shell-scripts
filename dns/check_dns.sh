@@ -5,6 +5,10 @@
 # Prompt the user for the domain name
 read -p "Enter the domain name: " domain
 
+echo "Clear the MAC Cache first"
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+
+
 echo "####### Checking NameServer Changes for $domain #######"
 echo
 
